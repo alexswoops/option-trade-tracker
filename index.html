@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Trade Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Option Trade Tracker</h1>
+            <div id="auth-section">
+                <div id="google-signin-button"></div>
+                <div id="user-info" class="hidden">
+                    <span id="user-email"></span>
+                    <button id="signout-btn" onclick="signOut()">Sign Out</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="login-prompt">
+                <div class="prompt-box">
+                    <h2>Welcome!</h2>
+                    <p>Sign in with Google to upload your trade screenshots.</p>
+                    <p class="subtitle">Your trades will be automatically extracted and saved to Google Sheets.</p>
+                </div>
+            </section>
+            <section id="upload-section" class="hidden">
+                <div id="drop-zone">
+                    <div class="drop-content">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        <p>Drag and drop your trade screenshot here</p>
+                        <p class="or-text">or</p>
+                        <label for="file-input" class="file-label">Choose File</label>
+                        <input type="file" id="file-input" accept="image/*">
+                    </div>
+                </div>
+                <div id="preview-section" class="hidden">
+                    <img id="preview-image" alt="Preview">
+                    <div class="preview-actions">
+                        <button id="submit-btn" onclick="submitScreenshot()">Extract Trade Data</button>
+                        <button id="clear-btn" class="secondary" onclick="clearPreview()">Clear</button>
+                    </div>
+                </div>
+                <div id="status-section">
+                    <div id="loading" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Analyzing screenshot with Claude AI...</p>
+                    </div>
+                    <div id="result"></div>
+                </div>
+            </section>
+        </main>
+        <footer><p>Powered by Claude AI + Google Sheets</p></footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
