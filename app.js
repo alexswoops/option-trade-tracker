@@ -9,6 +9,7 @@ let selectedFile = null;
 window.onload = function() {
     initGoogleSignIn();
     initDragAndDrop();
+    initPaste();
     document.getElementById('file-input').addEventListener('change', (e) => {
         if (e.target.files.length > 0) handleFile(e.target.files[0]);
     });
@@ -63,6 +64,21 @@ function initDragAndDrop() {
     dz.addEventListener('click', (e) => {
         if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL')
             document.getElementById('file-input').click();
+    });
+}
+
+function initPaste() {
+    document.addEventListener('paste', (e) => {
+        if (!idToken) return;
+        const items = e.clipboardData.items;
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].type.startsWith('image/')) {
+                e.preventDefault();
+                const file = items[i].getAsFile();
+                handleFile(file);
+                return;
+            }
+        }
     });
 }
 
