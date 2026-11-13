@@ -1,0 +1,17 @@
+{
+  "_comment": "Company job boards to watch. Slug = the part after the board domain, e.g. boards.greenhouse.io/<slug>, jobs.lever.co/<slug>, jobs.ashbyhq.com/<slug>. All slugs below were verified live in Nov 2026. Add more freely; a dead slug just logs a warning.",
+  "greenhouse": [
+    "thenewyorktimes", "voxmedia", "axios", "semafor", "insider", "hearst",
+    "wikimedia", "mozilla", "khanacademy", "coursera", "duolingo", "masterclass",
+    "squarespace", "webflow", "figma", "dropbox", "pinterest", "reddit", "discord", "twitch",
+    "airbnb", "stripe", "asana", "airtable", "intercom", "gusto", "carta", "brex", "chime",
+    "betterment", "robinhood", "coinbase", "affirm", "lyft", "instacart", "peloton", "calm",
+    "glossier", "everlane", "thefarmersdog", "kickstarter", "gitlab", "twilio", "cloudflare",
+    "datadog", "mongodb", "elastic", "okta", "toast", "samsara", "roblox"
+  ],
+  "lever": ["spotify", "palantir"],
+  "ashby": [
+    "notion", "substack", "ramp", "linear", "openai", "zapier", "replit", "quora",
+    "persona", "perplexity", "elevenlabs", "runway", "hex", "lemonade", "cursor"
+  ]
+}

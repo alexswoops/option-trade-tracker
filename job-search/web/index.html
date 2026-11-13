@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Job Search Board</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-row">
+      <div>
+        <h1>Job Search Board</h1>
+        <p class="sub" id="updated">Loading…</p>
+      </div>
+      <div class="top-actions">
+        <button class="ghost" id="exportBtn" title="Download your statuses and notes as a backup file">Export tracking</button>
+        <label class="ghost file-btn" title="Restore statuses and notes from a backup file">
+          Import<input type="file" id="importInput" accept="application/json" hidden />
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stats" id="stats"></section>
+
+    <section class="controls">
+      <input type="search" id="q" placeholder="Search title, company, location…" />
+      <select id="statusFilter">
+        <option value="open">To review + in progress</option>
+        <option value="all">All statuses</option>
+        <option value="new">New only</option>
+        <option value="interested">Interested</option>
+        <option value="applied">Applied</option>
+        <option value="interviewing">Interviewing</option>
+        <option value="offer">Offer</option>
+        <option value="rejected">Rejected</option>
+        <option value="pass">Passed</option>
+      </select>
+      <select id="minScore">
+        <option value="0">Any score</option>
+        <option value="50">50+</option>
+        <option value="70" selected>70+</option>
+        <option value="85">85+</option>
+      </select>
+      <select id="sort">
+        <option value="score">Best fit first</option>
+        <option value="newest">Newest first</option>
+        <option value="pay">Highest pay first</option>
+      </select>
+      <label class="check"><input type="checkbox" id="showUnscored" checked /> Unscored</label>
+      <label class="check"><input type="checkbox" id="showClosed" /> Closed</label>
+    </section>
+
+    <p class="count" id="count"></p>
+    <section id="list" class="list"></section>
+  </main>
+
+  <template id="cardTpl">
+    <article class="card">
+      <div class="card-head">
+        <div class="score"></div>
+        <div class="head-main">
+          <h2><a class="title" target="_blank" rel="noopener"></a></h2>
+          <p class="meta"></p>
+        </div>
+        <select class="status" aria-label="Status"></select>
+      </div>
+      <p class="summary"></p>
+      <div class="tags"></div>
+      <div class="fit"></div>
+      <details class="pitch-box">
+        <summary>Pitch &amp; resume emphasis</summary>
+        <div class="pitch-body"></div>
+      </details>
+      <details class="letter-box">
+        <summary>Cover letter draft</summary>
+        <div class="letter-body"></div>
+      </details>
+      <details class="desc-box">
+        <summary>Full posting</summary>
+        <pre class="desc"></pre>
+      </details>
+      <textarea class="notes" rows="2" placeholder="Notes (recruiter name, referral, follow-up date…)"></textarea>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

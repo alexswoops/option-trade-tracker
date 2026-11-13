@@ -1,0 +1,15 @@
+{
+  "name": "job-search",
+  "private": true,
+  "type": "module",
+  "description": "Twice-daily job discovery, filtering, and AI fit scoring with a static dashboard.",
+  "scripts": {
+    "run": "node src/run.mjs",
+    "run:no-ai": "node src/run.mjs --no-ai",
+    "serve": "node src/serve.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0"
+  }
+}

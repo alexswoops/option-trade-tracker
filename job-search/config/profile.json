@@ -1,0 +1,47 @@
+{
+  "_comment": "Search criteria. The resume itself is NOT stored here (see resume/README.md). Regexes are case-insensitive.",
+  "targetRoles": [
+    "Director of Editorial",
+    "Editorial Director",
+    "Director of Content Strategy",
+    "Head of Content",
+    "Director of Content",
+    "Executive Editor",
+    "Editor-in-Chief",
+    "VP Content",
+    "Director of Content Marketing",
+    "Director of Brand Storytelling"
+  ],
+  "titleRules": {
+    "seniority": "\\b(director|head of|head,|vp|vice president|chief|executive editor|editor[- ]in[- ]chief|editorial lead|managing director|global head)\\b",
+    "domain": "\\b(editorial|editor|content|storytelling|narrative|publishing|newsroom|journalism|newsletter|copy|brand voice|creative strategy)\\b",
+    "exclude": "\\b(intern|internship|associate director of sales|engineer|engineering|software|data scien|account executive|sales|security|legal counsel|recruit|finance|accounting|warehouse|nurse|physician|clinical)\\b"
+  },
+  "salary": {
+    "minAnnualUSD": 160000,
+    "_rule": "Jobs whose posted MAX pay is below the minimum are dropped. Jobs with no posted pay are kept and flagged so Claude can judge them."
+  },
+  "location": {
+    "remoteOK": true,
+    "remoteRegions": ["united states", "usa", "us", "north america", "americas", "anywhere", "worldwide", "global", "remote"],
+    "cities": ["New York", "NYC", "Brooklyn"],
+    "_note": "Edit cities to wherever he can work on-site or hybrid. Non-matching on-site jobs are dropped."
+  },
+  "searchQueries": [
+    "editorial director",
+    "content strategy director",
+    "head of content",
+    "director of content",
+    "executive editor",
+    "director editorial"
+  ],
+  "jobicyTags": ["content", "editorial", "editor", "copywriting"],
+  "scoring": {
+    "enabled": true,
+    "model": "claude-opus-5-5",
+    "maxNewScoresPerRun": 40,
+    "coverLetterMinScore": 75,
+    "maxCoverLettersPerRun": 8
+  },
+  "retentionDays": 45
+}

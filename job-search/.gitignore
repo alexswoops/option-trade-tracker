@@ -1,0 +1,4 @@
+node_modules/
+# Never commit the resume itself. Locally drop it in resume/; in CI it comes from the RESUME_TEXT secret.
+resume/*
+!resume/README.md
