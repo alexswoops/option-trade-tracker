@@ -3,19 +3,22 @@
   "targetRoles": [
     "Director of Editorial",
     "Editorial Director",
+    "Head of Editorial",
     "Director of Content Strategy",
+    "VP of Content Strategy",
     "Head of Content",
-    "Director of Content",
+    "Content Director",
     "Executive Editor",
     "Editor-in-Chief",
-    "VP Content",
+    "Director of Audience Development",
+    "Head of SEO / Director of SEO",
     "Director of Content Marketing",
-    "Director of Brand Storytelling"
+    "Head of Editorial at a tech company (robotics, AI, consumer tech)"
   ],
   "titleRules": {
     "seniority": "\\b(director|head of|head,|vp|vice president|chief|executive editor|editor[- ]in[- ]chief|editorial lead|managing director|global head)\\b",
-    "domain": "\\b(editorial|editor|content|storytelling|narrative|publishing|newsroom|journalism|newsletter|copy|brand voice|creative strategy)\\b",
-    "exclude": "\\b(intern|internship|associate director of sales|engineer|engineering|software|data scien|account executive|sales|security|legal counsel|recruit|finance|accounting|warehouse|nurse|physician|clinical)\\b"
+    "domain": "\\b(editorial|editor|content|storytelling|narrative|publishing|newsroom|journalism|newsletters?|audience|seo|search engine|organic (growth|search|traffic)|brand voice|creative strategy)\\b",
+    "exclude": "\\b(intern|internship|engineer|engineering|software|data scien|account executive|sales|security|legal counsel|recruit|finance|accounting|warehouse|nurse|physician|clinical|paid (search|media|social)|trust (and|&) safety|content moderation)\\b"
   },
   "salary": {
     "minAnnualUSD": 160000,
@@ -23,9 +26,23 @@
   },
   "location": {
     "remoteOK": true,
-    "remoteRegions": ["united states", "usa", "us", "north america", "americas", "anywhere", "worldwide", "global", "remote"],
-    "cities": ["New York", "NYC", "Brooklyn"],
-    "_note": "Edit cities to wherever he can work on-site or hybrid. Non-matching on-site jobs are dropped."
+    "remoteRegions": [
+      "united states",
+      "usa",
+      "us",
+      "north america",
+      "americas",
+      "anywhere",
+      "worldwide",
+      "global",
+      "remote"
+    ],
+    "cities": [
+      "Denver",
+      "Boulder",
+      "Colorado"
+    ],
+    "_note": "Ben is in Denver. Remote US roles plus on-site/hybrid in these places are kept; other on-site roles are dropped."
   },
   "searchQueries": [
     "editorial director",
@@ -33,9 +50,17 @@
     "head of content",
     "director of content",
     "executive editor",
-    "director editorial"
+    "head of editorial",
+    "director audience development",
+    "director of seo",
+    "vp content"
   ],
-  "jobicyTags": ["content", "editorial", "editor", "copywriting"],
+  "jobicyTags": [
+    "content",
+    "editorial",
+    "editor",
+    "seo"
+  ],
   "scoring": {
     "enabled": true,
     "model": "claude-opus-5-5",

@@ -1,6 +1,8 @@
 # Job Search Pipeline
 
-Automated job discovery for Director-level editorial and content strategy roles, $160K+ base.
+Automated job discovery for Director-level editorial, content strategy, audience, and SEO leadership roles, $160K+ base, US remote or Denver area.
+
+**Setting up your own copy? Start with [SETUP.md](SETUP.md).**
 
 Each run:
 
@@ -46,4 +48,4 @@ npm run serve                                 # dashboard at http://localhost:80
 
 ## Privacy
 
-The resume never goes in git: locally it lives in the git-ignored `resume/` folder, and in CI it should come from a secret. But **`web/data/jobs.json` contains Claude's output** (pitches, resume emphasis, cover letters), which is written from the resume. Keep that file in a **private** repo, and don't publish the dashboard on a public URL unless the scoring fields are stripped first.
+The resume never goes in git: locally it lives in the git-ignored `resume/` folder, and in Actions it comes from the `RESUME_TEXT` secret. But **`web/data/jobs.json` contains Claude's output** (pitches, resume emphasis, cover letters), which is written from the resume. That is why the scheduled workflow (`.github/workflows/job-search.yml`) only runs in a **private** repo and refuses to run in a public one, and why the dashboard is viewed locally rather than published.
